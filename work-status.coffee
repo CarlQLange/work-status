@@ -10,7 +10,7 @@ module.exports = (robot) ->
 		if msg.match[1] is 'everyone'
 			message = ""
 			for user of status_hash
-				message += "#{user_match_to_short_name(user)}: #{status_hash[user]}"
+				message += "#{user_match_to_short_name(user)}: #{status_hash[user]}\n"
 			msg.send message
 		else
 			shortname = msg.match[1]
