@@ -25,7 +25,8 @@ module.exports = (robot) ->
 user_match_to_full_name = (shortname) ->
 	match = ""
 	for user of status_hash
-		if user.match(/(\w*)\s/)[1].trim().toLowerCase() is shortname.trim().toLowerCase()
+		m = user.match(/(\w*)\s/)
+		if m[1] and m[1].trim().toLowerCase() is shortname.trim().toLowerCase()
 			match = user
 	match
 
