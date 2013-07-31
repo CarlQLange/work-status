@@ -6,7 +6,7 @@ module.exports = (robot) ->
 		status_hash[msg.message.user.name] = msg.match[1]
 		after 86400000, => delete status_hash[msg.message.user.name]
 
-	robot.respond /what\s+is\s+(.*)\s+working on/, (msg) ->
+	robot.respond /what\s+is\s+(.*)\s+working on/i, (msg) ->
 		if msg.match[1] is 'everyone'
 			message = ""
 			for user of status_hash
